@@ -52,3 +52,16 @@ for num in range(1, 6):
         continue
     print(num)
     print("Mission accomplished")
+sum = 0
+for num in range(1, 11):
+    sum += num
+    print(num)
+print("***********")
+print(f" sum of numbers range = {sum}")
+emails =["a@b.com" , "c@d.com" , "a@b.com"]
+unique_emails = set(emails)
+print(len(unique_emails))
+print(unique_emails)
+for i in unique_emails:
+    print(i)
+    
