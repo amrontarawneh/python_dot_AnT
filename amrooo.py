@@ -32,4 +32,23 @@ print(S[0].upper())
 for i in range(1,10):
     print(i)
     print("OK ... done!")
+choice = ""
 
+#while choice != "exit":
+  #  choice = input("Type 'greet' to say hi or 'exit' to quit: ").lower()
+
+ #   if choice == "greet":
+ #       print("Hello there!")
+
+print("Mission accomplished!")
+for num in range(1, 6):
+    if num == 3:
+        continue
+    print(num)
+    print("Mission accomplished")
+    for num in range(1, 6):
+        break
+    if num == 3:
+        continue
+    print(num)
+    print("Mission accomplished")
