@@ -64,4 +64,29 @@ print(len(unique_emails))
 print(unique_emails)
 for i in unique_emails:
     print(i)
-    
+    fruits = ['apple', 'banana', 'cherry']
+fruits.append("orange")
+
+print(abs(-10))       
+print(round(3.6))     
+print(pow(2, 3)) 
+user_profile ={
+     "username":"Amro",
+     "level": 5,
+     "is_active": True
+ }
+student_scores ={"Amro": 90, "mones": 5, "teeb": 5} # keys
+for name in student_scores.keys():
+    print(name)
+    student_scores ={"Amro": 90, "mones": 5, "teeb": 5} # values
+for name in student_scores.values():
+    print(name)
+student_scores ={"Amro": 90, "mones": 5, "teeb": 5} # items
+for name in student_scores.items():
+        print(name) 
+student_scores ={"Amro": 90, "mones": 5, "teeb": 5} # items
+for items in student_scores.items():
+        print(items) 
+        student_scores ={"Amro": 90, "mones": 5, "teeb": 5} # items
+for k,v in student_scores.items():
+        print(f"{k}: {v}") 
