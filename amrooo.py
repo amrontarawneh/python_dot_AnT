@@ -90,3 +90,14 @@ for items in student_scores.items():
         student_scores ={"Amro": 90, "mones": 5, "teeb": 5} # items
 for k,v in student_scores.items():
         print(f"{k}: {v}") 
+
+goods = ["TV", "Radio", "Washinmachine", "tablelamp"]
+
+g = goods
+
+print(g)
+
+goods[-1] = "hairdryer"
+
+print(goods)
+print(g)
