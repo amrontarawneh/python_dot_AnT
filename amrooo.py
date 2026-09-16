@@ -106,3 +106,47 @@ def double(x):
 print(double(5))
 lambda_double = lambda x: x * 2
 print(lambda_double(5))
+x="Global"
+def my_function():
+    y="Local"
+   
+    print(x)
+    print(y)
+
+my_function()
+#counter = 0
+
+#def update_counter():
+  #  counter = counter + 1
+
+#update_counter()
+counter = 0
+
+def update_counter():
+    global counter
+    counter = counter + 1
+
+update_counter()
+print(counter)
+def get_user_age():
+    try:
+        age = int(input("Enter your age: "))
+
+        if age < 0:
+            raise ValueError("Age cannot be negative.")
+
+        if age > 120:
+            print("Warning: That's a bit high, but we'll allow it!")
+
+    except ValueError as e:
+        print(f"Invalid Input: {e}")
+        return None
+
+    else:
+        return age
+
+
+user_age = get_user_age()
+
+if user_age:
+    print(f"Registered age: {user_age}")
