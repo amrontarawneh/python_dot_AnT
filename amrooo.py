@@ -101,3 +101,8 @@ goods[-1] = "hairdryer"
 
 print(goods)
 print(g)
+def double(x):
+    return x * 2
+print(double(5))
+lambda_double = lambda x: x * 2
+print(lambda_double(5))
