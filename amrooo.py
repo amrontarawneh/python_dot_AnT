@@ -128,25 +128,61 @@ def update_counter():
 
 update_counter()
 print(counter)
-def get_user_age():
-    try:
-        age = int(input("Enter your age: "))
+#def get_user_age():
+   # try:
+     #   age = int(input("Enter your age: "))
 
-        if age < 0:
-            raise ValueError("Age cannot be negative.")
+     #   if age < 0:
+      #      raise ValueError("Age cannot be negative.")
 
-        if age > 120:
-            print("Warning: That's a bit high, but we'll allow it!")
+     #   if age > 120:
+      #      print("Warning: That's a bit high, but we'll allow it!")
 
-    except ValueError as e:
-        print(f"Invalid Input: {e}")
-        return None
+   # except ValueError as e:
+     #   print(f"Invalid Input: {e}")
+  #      return None
 
-    else:
-        return age
+   # else:
+   #     return age
 
 
-user_age = get_user_age()
+#user_age = get_user_age()
 
-if user_age:
-    print(f"Registered age: {user_age}")
+#if user_age:
+    #print(f"Registered age: {user_age}")
+   # try:
+     #   result = 10 / 0
+    #except ZeroDivisionError:
+       # print("Error: Division by zero is not allowed.")
+class Car:
+
+    def __init__(self, color, model):
+        self.color = color
+        self.model = model
+        self.speed = 0
+
+    def drive(self):
+        self.speed = 50
+        print("Car is driving")
+
+    def brake(self):
+        self.speed = 0
+        print("Car stopped")
+
+    def getSpeed(self):
+        return self.speed
+
+
+myCar = Car("Red", "Sedan")
+
+print(myCar.color)
+print(myCar.model)
+print(myCar.getSpeed())
+
+myCar.drive()
+
+print(myCar.getSpeed())
+
+myCar.brake()
+
+print(myCar.getSpeed())
