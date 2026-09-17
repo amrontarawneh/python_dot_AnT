@@ -155,34 +155,27 @@ print(counter)
     #except ZeroDivisionError:
        # print("Error: Division by zero is not allowed.")
 class Car:
+    # The 'blueprint' for all cars
 
-    def __init__(self, color, model):
-        self.color = color
+    def __init__(self, brand, model, color):
+        self.brand = brand
         self.model = model
-        self.speed = 0
+        self.color = color
 
     def drive(self):
-        self.speed = 50
-        print("Car is driving")
-
-    def brake(self):
-        self.speed = 0
-        print("Car stopped")
-
-    def getSpeed(self):
-        return self.speed
+        print(f"The {self.color} {self.model} is now driving!")
 
 
-myCar = Car("Red", "Sedan")
+# Creating Objects (Instances) from the Car class
 
-print(myCar.color)
-print(myCar.model)
-print(myCar.getSpeed())
+car1 = Car("Tesla", "Model S", "Red")
+car2 = Car("Ford", "Mustang", "Blue")
 
-myCar.drive()
 
-print(myCar.getSpeed())
+# Accessing attributes and methods
 
-myCar.brake()
+print(car1.brand)
+# Output: Tesla
 
-print(myCar.getSpeed())
+car2.drive()
+# Output: The Blue Mustang is now driving!
