@@ -179,3 +179,50 @@ print(car1.brand)
 
 car2.drive()
 # Output: The Blue Mustang is now driving!
+class Student:
+
+    def __init__(self, name, student_id, major="Undeclared"):
+        # Initializing attributes
+        self.name = name
+        self.student_id = student_id
+        self.major = major
+        self.grades = []
+
+        print(f"Record created for {self.name} (ID: {self.student_id})")
+
+
+# Creating objects
+student1 = Student("Marcus", "S10234", "Computer Science")
+
+student2 = Student("Elena", "S10559")
+
+
+# Accessing the initialized data
+print(f"Student 1 Major: {student1.major}")
+print(f"Student 2 Major: {student2.major}")
+class BankAccount:
+
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self._balance = balance
+
+    # Getter method
+    def get_balance(self):
+        return f"Balance for {self.owner}: ${self._balance}"
+
+    # Deposit method with validation
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+            print(f"Deposited ${amount}")
+        else:
+            print("Error: Deposit amount must be positive.")
+
+
+# Usage
+account = BankAccount("Alice", 1000)
+
+print(account.get_balance())
+
+account.deposit(500)
+account.deposit(-50)
