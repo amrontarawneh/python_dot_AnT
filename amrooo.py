@@ -226,3 +226,68 @@ print(account.get_balance())
 
 account.deposit(500)
 account.deposit(-50)
+class Animal:
+
+    def speak(self):
+        # This is a placeholder
+        pass
+
+
+# Child Class 1
+class Dog(Animal):
+
+    def speak(self):
+        return "Woof! Woof!"
+
+
+# Child Class 2
+class Cat(Animal):
+
+    def speak(self):
+        return "Meow!"
+
+
+# Child Class 3
+class Duck(Animal):
+
+    def speak(self):
+        return "Quack!"
+
+
+# Polymorphism in action
+animals = [Dog(), Cat(), Duck()]
+
+for animal in animals:
+    print(f"{type(animal).__name__} says: {animal.speak()}")
+    
+class Book:
+
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f'"{self.title}" by {self.author}'
+
+
+my_book = Book("Embedded Logic", "A. Engineer")
+
+print(my_book)
+class Component:
+    total_produced = 0  # Class Attribute
+
+    def __init__(self, part_type):
+        self.part_type = part_type
+        Component.total_produced += 1
+
+    @classmethod
+    def get_factory_stats(cls):
+        return f"Total units manufactured: {cls.total_produced}"
+
+
+c1 = Component("Resistor")
+c2 = Component("Capacitor")
+c3 = Component("Inductor")
+
+
+print(Component.get_factory_stats())
