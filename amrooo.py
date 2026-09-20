@@ -291,3 +291,36 @@ c3 = Component("Inductor")
 
 
 print(Component.get_factory_stats())
+class SignalConverter:
+
+    @staticmethod
+    def volts_to_millivolts(v):
+        # Pure logic: doesn't need any object or class data
+        return v * 1000
+
+
+print(SignalConverter.volts_to_millivolts(3.3))
+class Shelf:
+    def __init__(self, items):
+        self.items = items
+
+    def __len__(self):
+        return len(self.items)
+
+    def __getitem__(self, index):
+        return self.items[index]
+
+
+my_shelf = Shelf(["Multimeter", "Oscilloscope", "Soldering Iron"])
+
+print(len(my_shelf))
+print(my_shelf[1])
+with open("example.txt", "w") as file:
+    file.write("Hello, Python world!\n")
+    file.write("This is a practice file.")
+    
+with open("example.txt", "r") as file:
+    content = file.read()
+
+print("--- File Content ---")
+print(content)
