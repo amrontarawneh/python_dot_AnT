@@ -324,3 +324,6 @@ with open("example.txt", "r") as file:
 
 print("--- File Content ---")
 print(content)
+text = "Hello"
+
+print(hash(text))
