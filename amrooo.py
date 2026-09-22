@@ -1,3 +1,6 @@
+import math
+
+
 S = "Hello there!"
 
 print(S)
@@ -327,3 +330,39 @@ print(content)
 text = "Hello"
 
 print(hash(text))
+
+def add(a, b):
+    return a + b
+
+
+def sub(a, b):
+    return a - b
+
+
+def mul(a, b):
+    return a * b
+
+
+def div(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        print("Error in calculation")
+
+
+def test():
+    a = float(input("Enter first argument: "))
+    b = float(input("Enter second argument: "))
+
+    print(f"Result of a + b: {add(a, b)}")
+    print(f"Result of a - b: {sub(a, b)}")
+    print(f"Result of a * b: {mul(a, b)}")
+    print(f"Result of a / b: {div(a, b)}")
+
+
+if __name__ == "__main__":
+    test()
+    import my math
+a= float(input("Enter a: "))
+b= float(input("Enter b: "))
+print(my_math.add(a, b))
