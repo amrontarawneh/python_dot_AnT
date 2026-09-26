@@ -376,3 +376,38 @@ print("Step 1: This prints instantly during setup.")
 root.mainloop()
 
 print("Step 2: This WILL NOT print until you close the GUI window!")
+
+import tkinter as tk
+
+root = tk.Tk()
+root.geometry("500x400")
+
+# 1. Upper and Lower Container Frames
+upper_frame = tk.Frame(root, bg="lightblue")
+upper_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
+lower_frame = tk.Frame(root, bg="lightgray")
+lower_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
+# 2. Text widget in Upper Frame
+text_widget = tk.Text(upper_frame, height=5)
+text_widget.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+
+# 3. Three side-by-side frames inside Lower Frame
+sub_left = tk.Frame(lower_frame, bg="white")
+sub_left.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
+
+sub_mid = tk.Frame(lower_frame, bg="white")
+sub_mid.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
+
+sub_right = tk.Frame(lower_frame, bg="white")
+sub_right.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
+
+# 4. Put different widgets into each of the 3 lower areas
+tk.Button(sub_left, text="Widget 1").pack(padx=10, pady=10)
+
+tk.Entry(sub_mid).pack(padx=10, pady=10)
+
+tk.Label(sub_right, text="Widget 3").pack(padx=10, pady=10)
+
+root.mainloop()
