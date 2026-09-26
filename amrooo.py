@@ -360,9 +360,19 @@ def test():
     print(f"Result of a / b: {div(a, b)}")
 
 
-if __name__ == "__main__":
-    test()
-    import my math
-a= float(input("Enter a: "))
-b= float(input("Enter b: "))
-print(my_math.add(a, b))
+#if __name__ == "__main__":
+  #  test()
+ #   import my math
+#a= float(input("Enter a: "))
+#b= float(input("Enter b: "))
+#print(my_math.add(a, b))
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Loop Demonstration")
+
+print("Step 1: This prints instantly during setup.")
+
+root.mainloop()
+
+print("Step 2: This WILL NOT print until you close the GUI window!")
