@@ -366,48 +366,265 @@ def test():
 #a= float(input("Enter a: "))
 #b= float(input("Enter b: "))
 #print(my_math.add(a, b))
-import tkinter as tk
+# import tkinter as tk
 
-root = tk.Tk()
-root.title("Loop Demonstration")
+# root = tk.Tk()
+# root.title("Loop Demonstration")
 
-print("Step 1: This prints instantly during setup.")
+# print("Step 1: This prints instantly during setup.")
 
-root.mainloop()
+# root.mainloop()
 
-print("Step 2: This WILL NOT print until you close the GUI window!")
+# print("Step 2: This WILL NOT print until you close the GUI window!")
 
-import tkinter as tk
+# import tkinter as tk
 
-root = tk.Tk()
-root.geometry("500x400")
+# root = tk.Tk()
+# root.geometry("500x400")
 
 # 1. Upper and Lower Container Frames
-upper_frame = tk.Frame(root, bg="lightblue")
-upper_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+# upper_frame = tk.Frame(root, bg="lightblue")
+# upper_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-lower_frame = tk.Frame(root, bg="lightgray")
-lower_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+# lower_frame = tk.Frame(root, bg="lightgray")
+# lower_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 # 2. Text widget in Upper Frame
-text_widget = tk.Text(upper_frame, height=5)
-text_widget.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+# text_widget = tk.Text(upper_frame, height=5)
+# text_widget.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
 # 3. Three side-by-side frames inside Lower Frame
-sub_left = tk.Frame(lower_frame, bg="white")
-sub_left.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
+# sub_left = tk.Frame(lower_frame, bg="white")
+# sub_left.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
 
-sub_mid = tk.Frame(lower_frame, bg="white")
-sub_mid.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
+# sub_mid = tk.Frame(lower_frame, bg="white")
+# sub_mid.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
 
-sub_right = tk.Frame(lower_frame, bg="white")
-sub_right.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
+# sub_right = tk.Frame(lower_frame, bg="white")
+# sub_right.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5, pady=5)
 
 # 4. Put different widgets into each of the 3 lower areas
-tk.Button(sub_left, text="Widget 1").pack(padx=10, pady=10)
+# tk.Button(sub_left, text="Widget 1").pack(padx=10, pady=10)
 
-tk.Entry(sub_mid).pack(padx=10, pady=10)
+# tk.Entry(sub_mid).pack(padx=10, pady=10)
 
-tk.Label(sub_right, text="Widget 3").pack(padx=10, pady=10)
+# tk.Label(sub_right, text="Widget 3").pack(padx=10, pady=10)
+
+# root.mainloop()
+# import tkinter as tk
+
+# def on_button_click():
+    # print("Button was clicked!")
+
+# def on_enter_key(event):
+    # print("Enter key was pressed on the keyboard!")
+
+# root = tk.Tk()
+# root.title("Handling Events Example")
+# root.geometry("300x200")
+
+# 1. Using the command parameter for a button click
+# btn = tk.Button(
+    # root,
+    # text="Click Me",
+#  command=on_button_click
+
+# btn.pack(pady=20)
+
+# 2. Using bind() to listen for keyboard events on the root window
+# The event is raised when the <Return> key is pressed.
+# root.bind("<Return>", on_enter_key)
+
+# root.mainloop()
+
+# import tkinter as tk
+
+# def on_button_click_granular(event):
+    # Because we used .bind(), we can inspect the event object
+    # print(f"Clicked at coordinates: X={event.x}, Y={event.y}")
+
+# root = tk.Tk()
+# root.geometry("300x200")
+
+# btn = tk.Button(root, text="Granular Click Me")
+# btn.pack(pady=50)
+
+# Bind the left mouse click event to the button
+# btn.bind("<Button-1>", on_button_click_granular)
+
+# root.mainloop()
+# import tkinter as tk
+
+# def on_button_click_granular1(event):
+    # Because we used .bind(), we can inspect the event object!
+    # print(f"Clicked (1) at coordinates: X={event.x}, Y={event.y}")
+
+# def on_button_click_granular2(event):
+    # Because we used .bind(), we can inspect the event object!
+    # print(f"Clicked (2) at coordinates: X={event.x}, Y={event.y}")
+
+# root = tk.Tk()
+# root.geometry("300x200")
+# root.title("Testing Mouse Clicks")
+
+# btn = tk.Button(root, text="Granular Click Me")
+# btn.pack(pady=50)
+
+# Bind the left mouse click event to the button
+# btn.bind("<Button-1>", on_button_click_granular1)
+
+# Bind the right mouse click event to the button
+# btn.bind("<Button-3>", on_button_click_granular2)
+
+# root.mainloop()
+# import tkinter as tk
+
+# root = tk.Tk()
+# root.title("Tkinter Variables Example")
+# root.geometry("300x200")
+
+# Create a StringVar wrapper
+# name_var = tk.StringVar()
+
+# Entry box linked to the StringVar
+# entry = tk.Entry(
+    # root,
+    # textvariable=name_var,
+    # font=("Arial", 11)
+
+# entry.pack(pady=20)
+
+# Label also linked to the exact same StringVar
+# Instant mirroring
+# label = tk.Label(
+    # root,
+    # textvariable=name_var,
+    # font=("Arial", 12, "bold")
+# )
+# label.pack(pady=10)
+
+# root.mainloop()
+import tkinter as tk
+
+def get_input():
+    user_text = entry.get()  # Retrieve text from entry box
+    print(f"User entered: {user_text}")
+    
+    entry.delete(0, tk.END)  # Clear the Entry box
+
+root = tk.Tk()
+root.title("User Input Example")
+root.geometry("300x200")
+
+entry = tk.Entry(root, width=25, font=("Arial", 22))
+entry.pack(pady=20)
+
+submit_btn = tk.Button(
+    root,
+    text="Submit Input",
+    command=get_input
+)
+submit_btn.pack(pady=5)
 
 root.mainloop()
+import tkinter as tk
+
+def get_input():
+    user_text = entry.get()  # Retrieve text from entry box
+    print(f"User entered: {user_text}")
+    
+    entry.delete(0, tk.END)  # Clear the Entry box
+
+root = tk.Tk()
+root.title("User Input Example")
+root.geometry("300x200")
+
+entry = tk.Entry(root, width=25, font=("Arial", 22))
+entry.pack(pady=20)
+
+submit_btn = tk.Button(
+    root,
+    text="Submit Input",
+    command=get_input
+)
+submit_btn.pack(pady=5)
+
+root.mainloop()
+import tkinter as tk
+from tkinter import messagebox
+
+def trigger_alert():
+    # Show a warning popup
+    messagebox.showwarning(
+        "Warning",
+        "Disk space is running low!"
+    )
+
+def confirm_action():
+    # Ask a yes/no question
+    answer = messagebox.askyesno(
+        "Confirmation",
+        "Do you really want to exit?"
+    )
+
+    if answer:
+        root.quit()
+
+root = tk.Tk()
+root.title("Dialogs Example")
+root.geometry("300x200")
+
+warn_btn = tk.Button(
+    root,
+    text="Show Warning",
+    command=trigger_alert
+)
+warn_btn.pack(pady=15)
+
+exit_btn = tk.Button(
+    root,
+    text="Exit App",
+    command=confirm_action
+)
+exit_btn.pack(pady=5)
+
+root.mainloop()
+import tkinter as tk
+
+
+class MyApplication(tk.Tk):
+
+    def __init__(self):
+        super().__init__()
+
+        self.title("OOP Application Structure")
+        self.geometry("300x200")
+
+        # Build UI components
+        self.create_widgets()
+
+    def create_widgets(self):
+        self.label = tk.Label(
+            self,
+            text="Welcome to Class-based Tkinter!",
+            font=("Arial", 10)
+        )
+        self.label.pack(pady=20)
+
+        self.btn = tk.Button(
+            self,
+            text="Click Me",
+            command=self.on_click
+        )
+        self.btn.pack(pady=10)
+
+    def on_click(self):
+        self.label.config(
+            text="Button Clicked via Class Method!"
+        )
+
+
+if __name__ == "__main__":
+    app = MyApplication()
+    app.mainloop()
+    
