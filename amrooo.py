@@ -504,127 +504,144 @@ def test():
 # label.pack(pady=10)
 
 # root.mainloop()
-import tkinter as tk
+# import tkinter as tk
 
-def get_input():
-    user_text = entry.get()  # Retrieve text from entry box
-    print(f"User entered: {user_text}")
+# def get_input():
+    # user_text = entry.get()  # Retrieve text from entry box
+    # print(f"User entered: {user_text}")
     
-    entry.delete(0, tk.END)  # Clear the Entry box
+    # entry.delete(0, tk.END)  # Clear the Entry box
 
-root = tk.Tk()
-root.title("User Input Example")
-root.geometry("300x200")
+# root = tk.Tk()
+# root.title("User Input Example")
+# root.geometry("300x200")
 
-entry = tk.Entry(root, width=25, font=("Arial", 22))
-entry.pack(pady=20)
+# entry = tk.Entry(root, width=25, font=("Arial", 22))
+# entry.pack(pady=20)
 
-submit_btn = tk.Button(
-    root,
-    text="Submit Input",
-    command=get_input
-)
-submit_btn.pack(pady=5)
+# submit_btn = tk.Button(
+    # root,
+    # text="Submit Input",
+    # command=get_input
+# )
+# submit_btn.pack(pady=5)
 
-root.mainloop()
-import tkinter as tk
+# root.mainloop()
+# import tkinter as tk
 
-def get_input():
-    user_text = entry.get()  # Retrieve text from entry box
-    print(f"User entered: {user_text}")
+# def get_input():
+    # user_text = entry.get()  # Retrieve text from entry box
+    # print(f"User entered: {user_text}")
     
-    entry.delete(0, tk.END)  # Clear the Entry box
+    # entry.delete(0, tk.END)  # Clear the Entry box
 
-root = tk.Tk()
-root.title("User Input Example")
-root.geometry("300x200")
+# root = tk.Tk()
+# root.title("User Input Example")
+# root.geometry("300x200")
 
-entry = tk.Entry(root, width=25, font=("Arial", 22))
-entry.pack(pady=20)
+# entry = tk.Entry(root, width=25, font=("Arial", 22))
+# entry.pack(pady=20)
 
-submit_btn = tk.Button(
-    root,
-    text="Submit Input",
-    command=get_input
-)
-submit_btn.pack(pady=5)
+# submit_btn = tk.Button(
+    # root,
+    # text="Submit Input",
+    # command=get_input
+# )
+# submit_btn.pack(pady=5)
 
-root.mainloop()
-import tkinter as tk
-from tkinter import messagebox
+# root.mainloop()
+# import tkinter as tk
+# from tkinter import messagebox
 
-def trigger_alert():
+# def trigger_alert():
     # Show a warning popup
-    messagebox.showwarning(
-        "Warning",
-        "Disk space is running low!"
-    )
+    # messagebox.showwarning(
+        # "Warning",
+        # "Disk space is running low!"
+    # )
 
-def confirm_action():
+# def confirm_action():
     # Ask a yes/no question
-    answer = messagebox.askyesno(
-        "Confirmation",
-        "Do you really want to exit?"
-    )
+    # answer = messagebox.askyesno(
+        # "Confirmation",
+        # "Do you really want to exit?"
+    # )
 
-    if answer:
-        root.quit()
+    # if answer:
+        # root.quit()
 
-root = tk.Tk()
-root.title("Dialogs Example")
-root.geometry("300x200")
+# root = tk.Tk()
+# root.title("Dialogs Example")
+# root.geometry("300x200")
 
-warn_btn = tk.Button(
-    root,
-    text="Show Warning",
-    command=trigger_alert
-)
-warn_btn.pack(pady=15)
+# warn_btn = tk.Button(
+    # root,
+    # text="Show Warning",
+    # command=trigger_alert
+# )
+# warn_btn.pack(pady=15)
 
-exit_btn = tk.Button(
-    root,
-    text="Exit App",
-    command=confirm_action
-)
-exit_btn.pack(pady=5)
+# exit_btn = tk.Button(
+    # root,
+    # text="Exit App",
+    # command=confirm_action
+# )
+# exit_btn.pack(pady=5)
 
-root.mainloop()
-import tkinter as tk
+# root.mainloop()
+# import tkinter as tk
 
 
-class MyApplication(tk.Tk):
+# class MyApplication(tk.Tk):
 
-    def __init__(self):
-        super().__init__()
+    # def __init__(self):
+        # super().__init__()
 
-        self.title("OOP Application Structure")
-        self.geometry("300x200")
+        # self.title("OOP Application Structure")
+        # self.geometry("300x200")
 
         # Build UI components
-        self.create_widgets()
+        # self.create_widgets()
 
-    def create_widgets(self):
-        self.label = tk.Label(
-            self,
-            text="Welcome to Class-based Tkinter!",
-            font=("Arial", 10)
-        )
-        self.label.pack(pady=20)
+    # def create_widgets(self):
+        # self.label = tk.Label(
+            # self,
+            # text="Welcome to Class-based Tkinter!",
+            # font=("Arial", 10)
+        # )
+        # self.label.pack(pady=20)
 
-        self.btn = tk.Button(
-            self,
-            text="Click Me",
-            command=self.on_click
-        )
-        self.btn.pack(pady=10)
+        # self.btn = tk.Button(
+            # self,
+            # text="Click Me",
+            # command=self.on_click
+        # )
+        # self.btn.pack(pady=10)
 
-    def on_click(self):
-        self.label.config(
-            text="Button Clicked via Class Method!"
-        )
+    # def on_click(self):
+        # self.label.config(
+            # text="Button Clicked via Class Method!"
+        # )
 
+
+# if __name__ == "__main__":
+    # app = MyApplication()
+    # app.mainloop()
+   from flask import Flask, redirect, url_for
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello! This is the main page <h1>HELLO</h1>"
+
+@app.route("/<name>")
+def user(name):
+    return f"Hello {name}"
+
+@app.route("/admin")
+def admin():
+    return redirect(url_for("home"))
 
 if __name__ == "__main__":
-    app = MyApplication()
-    app.mainloop()
-    
+    app.run(debug=True)
