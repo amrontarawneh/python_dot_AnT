@@ -627,7 +627,7 @@ def test():
 # if __name__ == "__main__":
     # app = MyApplication()
     # app.mainloop()
-   from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for
 
 app = Flask(__name__)
 
@@ -642,6 +642,34 @@ def user(name):
 @app.route("/admin")
 def admin():
     return redirect(url_for("home"))
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    from flask import Flask, render_template, request, redirect, url_for
+
+app = Flask(__name__)
+
+
+@app.route("/feedback", methods=["GET", "POST"])
+def feedback():
+    if request.method == "POST":
+        # Extract form field values using the "name" attribute from HTML
+        username = request.form.get("username")
+        message = request.form.get("message")
+
+        # Process or print data
+        print(f"Received feedback from {username}: {message}")
+
+        # Redirect to avoid duplicate form submissions on page refresh
+        return redirect(url_for("feedback_success"))
+
+    return render_template("feedback_form.html")
+
+
+@app.route("/success")
+def feedback_success():
+    return "<h2>Thank you for your feedback!</h2>"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
