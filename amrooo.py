@@ -627,50 +627,90 @@ def test():
 # if __name__ == "__main__":
     # app = MyApplication()
     # app.mainloop()
-from flask import Flask, redirect, url_for
+#from flask import Flask, redirect, url_for
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return "Hello! This is the main page <h1>HELLO</h1>"
+#@app.route("/")
+#def home():
+   # return "Hello! This is the main page <h1>HELLO</h1>"
 
-@app.route("/<name>")
-def user(name):
-    return f"Hello {name}"
+#@app.route("/<name>")
+#def user(name):
+    #return f"Hello {name}"
 
-@app.route("/admin")
-def admin():
-    return redirect(url_for("home"))
+#@app.route("/admin")
+#def admin():
+  #  return redirect(url_for("home"))
 
-if __name__ == "__main__":
-    app.run(debug=True)
-    from flask import Flask, render_template, request, redirect, url_for
+#if __name__ == "__main__":
+   # app.run(debug=True)
+    #from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
 
-@app.route("/feedback", methods=["GET", "POST"])
-def feedback():
-    if request.method == "POST":
+#@app.route("/feedback", methods=["GET", "POST"])
+#def feedback():
+   # if request.method == "POST":
         # Extract form field values using the "name" attribute from HTML
-        username = request.form.get("username")
-        message = request.form.get("message")
+       # username = request.form.get("username")
+      #  message = request.form.get("message")
 
         # Process or print data
-        print(f"Received feedback from {username}: {message}")
+     #   print(f"Received feedback from {username}: {message}")
 
         # Redirect to avoid duplicate form submissions on page refresh
-        return redirect(url_for("feedback_success"))
+    #    return redirect(url_for("feedback_success"))
 
-    return render_template("feedback_form.html")
-
-
-@app.route("/success")
-def feedback_success():
-    return "<h2>Thank you for your feedback!</h2>"
+   # return render_template("feedback_form.html")
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
-   
+#@app.route("/success")
+#def feedback_success():
+   # return "<h2>Thank you for your feedback!</h2>"
+
+
+#if __name__ == "__main__":
+ #   app.run(debug=True)
+import pandas as pd
+
+df = pd.read_csv("ComputerSales.csv")
+
+print("Columns:", df.columns.tolist())
+print("Shape:", df.shape)
+print(df.head(3))
+print(df.info())
+
+print("\nProduct Types & Count:")
+print(df["Product Type"].value_counts())
+
+print("\nTotal Profit by Product Type:")
+print(df.groupby("Product Type")["Profit"].sum())
+import pandas as pd
+
+# Creating a sample dataset of employees
+data = {
+    'ID': [101, 102, 103, 104, 105, 106],
+    'Name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Ethan', 'Fiona'],
+    'Salary': [50000, 60000, 55000, 75000, 48000, 82000]
+}
+
+# Creating a DataFrame
+df = pd.DataFrame(data)
+
+# View the first 2 rows
+print("\n--- head(2) ---")
+print(df.head(2))
+
+# View the last 2 rows
+print("\n--- tail(2) ---")
+print(df.tail(2))
+
+# View information about the DataFrame
+print("\n--- info() ---")
+df.info()
+
+# View summary statistics for numerical columns
+print("\n--- describe() ---")
+print(df.describe())
