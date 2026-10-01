@@ -714,3 +714,90 @@ df.info()
 # View summary statistics for numerical columns
 print("\n--- describe() ---")
 print(df.describe())
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Read the CSV file
+df = pd.read_csv('ComputerSales.csv')
+
+# Example 1: Total Sales and Total Profit by Product Type
+product_summary = df.groupby('Product Type')[['Sale Price', 'Profit']].sum()
+
+print(product_summary)
+
+
+# Example 2: Scatter plot of Age vs Sale Price by Product Type
+plt.figure(figsize=(6, 5))
+
+for p_type in df['Product Type'].unique():
+    subset = df[df['Product Type'] == p_type]
+    
+    plt.scatter(
+        subset['Age'],
+        subset['Sale Price'],
+        label=p_type
+    )
+
+plt.title('Age vs. Sale Price by Product Type')
+plt.xlabel('Customer Age')
+plt.ylabel('Sale Price ($)')
+
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.5)
+
+plt.savefig('plot2.png')
+plt.show()
+plt.close()
+import pandas as pd
+
+# --- 1. Load the Data ---
+df = pd.read_csv("sleep_vs_grades.csv")
+
+print("--- Step 1: Data Loaded ---")
+print(df.head())
+
+
+# --- 2. Split Dataset ---
+from sklearn.model_selection import train_test_split
+
+X = df[["Sleep_Hours"]]
+y = df["Exam_Grade"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+print("\n--- Step 2: Dataset Split ---")
+print(f"Training samples: {X_train.shape[0]}")
+print(f"Testing samples: {X_test.shape[0]}")
+
+
+# --- 3. Initialize and Train the Model ---
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+
+model.fit(X_train, y_train)
+
+print("\n--- Step 3: Model Trained ---")
+print(f"Learned Weight (Slope): {model.coef_[0]:.2f}")
+print(f"Learned Bias (Intercept): {model.intercept_:.2f}")
+
+
+# --- 4. Make Predictions on Test Data ---
+y_pred = model.predict(X_test)
+
+print("\n--- Step 4: Predictions Made ---")
+print(y_pred)
+
+
+# --- 5. Evaluate Model Performance ---
+from sklearn.metrics import mean_squared_error, r2_score
+
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print("\n--- Step 5: Evaluation ---")
+print(f"Mean Squared Error (MSE): {mse:.2f}")
+print(f"R-squared (R2) Score: {r2:.2f}")
